@@ -68,10 +68,10 @@ node --version
 npm --version
 ```
 
-Debe tener Node.js 18 o superior.
+Debe tener Node.js 20.19 o superior.
 
 ## Troubleshooting
 
 - **Puerto 4200 en uso:** Si el puerto 4200 está en uso, Angular te ofrecerá usar otro puerto
 - **Errores de caché:** Elimina `node_modules` y `package-lock.json`, luego ejecuta `npm install` de nuevo
-- **Errores TypeScript:** Asegúrate de tener la versión correcta de TypeScript: `npm install typescript@5.6.0 --save-dev`
+- **Errores TypeScript:** Asegúrate de tener la versión correcta de TypeScript instalada con las dependencias del proyecto (`typescript ~5.9.0`). Normalmente basta con ejecutar `npm install`.

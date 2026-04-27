@@ -17,7 +17,6 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 - Manejo de errores y mensajes de éxito
 - Indicadores visuales por estado
 - Diseño responsive (desktop y móvil)
-- Tests unitarios para servicios y componentes
 
 ### Changed
 - N/A
