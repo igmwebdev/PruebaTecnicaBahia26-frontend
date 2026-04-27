@@ -1,0 +1,18 @@
+<div class="app-container">
+  <nav class="navbar">
+    <div class="nav-content">
+      <h1 class="app-title">Gestión de Pedidos</h1>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      <app-order-form (orderCreated)="onOrderCreated()"></app-order-form>
+      <app-order-list></app-order-list>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Prueba Técnica. Todos los derechos reservados.</p>
+  </footer>
+</div>

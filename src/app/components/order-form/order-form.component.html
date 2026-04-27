@@ -1,0 +1,67 @@
+<div class="order-form-container">
+  <div class="form-card">
+    <h2>Crear Nuevo Pedido</h2>
+
+    <div *ngIf="successMessage" class="alert alert-success">
+      <span>{{ successMessage }}</span>
+    </div>
+
+    <div *ngIf="error" class="alert alert-error">
+      <span>{{ error }}</span>
+      <button class="alert-close" (click)="closeErrorMessage()">×</button>
+    </div>
+
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="customerName">Cliente *</label>
+        <input
+          type="text"
+          id="customerName"
+          formControlName="customerName"
+          placeholder="Nombre del cliente"
+          [class.input-error]="orderForm.get('customerName')?.invalid && orderForm.get('customerName')?.touched"
+        />
+        <span class="error-text" *ngIf="getFieldError('customerName')">
+          {{ getFieldError('customerName') }}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="product">Producto *</label>
+        <input
+          type="text"
+          id="product"
+          formControlName="product"
+          placeholder="Nombre del producto"
+          [class.input-error]="orderForm.get('product')?.invalid && orderForm.get('product')?.touched"
+        />
+        <span class="error-text" *ngIf="getFieldError('product')">
+          {{ getFieldError('product') }}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Cantidad *</label>
+        <input
+          type="number"
+          id="quantity"
+          formControlName="quantity"
+          placeholder="0"
+          min="1"
+          [class.input-error]="orderForm.get('quantity')?.invalid && orderForm.get('quantity')?.touched"
+        />
+        <span class="error-text" *ngIf="getFieldError('quantity')">
+          {{ getFieldError('quantity') }}
+        </span>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="orderForm.invalid || isLoading"
+      >
+        {{ isLoading ? 'Creando...' : 'Crear Pedido' }}
+      </button>
+    </form>
+  </div>
+</div>

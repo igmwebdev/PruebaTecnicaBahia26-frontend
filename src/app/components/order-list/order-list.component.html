@@ -1,0 +1,69 @@
+<div class="order-list-container">
+  <div class="header">
+    <h1>Gestión de Pedidos</h1>
+    <button class="btn btn-primary" (click)="executeBatch()" [disabled]="isLoading">
+      {{ isLoading ? 'Procesando...' : 'Ejecutar Batch' }}
+    </button>
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success">
+    <span>{{ successMessage }}</span>
+    <button class="alert-close" (click)="closeSuccessMessage()">×</button>
+  </div>
+
+  <div *ngIf="error" class="alert alert-error">
+    <span>{{ error }}</span>
+    <button class="alert-close" (click)="closeErrorMessage()">×</button>
+  </div>
+
+  <div class="filter-section">
+    <label for="statusFilter">Filtrar por estado:</label>
+    <select 
+      id="statusFilter"
+      [(ngModel)]="selectedStatus" 
+      (change)="onFilterChange()"
+      [disabled]="isLoading"
+    >
+      <option *ngFor="let status of statuses" [value]="status">
+        {{ status === 'ALL' ? 'Todos' : (status === 'NEW' ? 'Nuevo' : (status === 'PROCESSED' ? 'Procesado' : 'Fallido')) }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    <p>Cargando pedidos...</p>
+  </div>
+
+  <div *ngIf="!isLoading && filteredOrders.length === 0" class="empty-state">
+    <p>No hay pedidos para mostrar</p>
+  </div>
+
+  <div *ngIf="!isLoading && filteredOrders.length > 0" class="orders-table">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Estado</th>
+          <th>Creado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of filteredOrders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.product }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>
+            <span class="status-badge" [ngClass]="getStatusClass(order.status)">
+              {{ getStatusLabel(order.status) }}
+            </span>
+          </td>
+          <td>{{ order.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
