@@ -17,6 +17,11 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .app-title {
@@ -24,6 +29,27 @@
     font-size: 1.5rem;
     color: #0066cc;
     font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.6rem 0.85rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s, color 0.2s;
+
+      &:hover,
+      &.active {
+        background-color: #e3f2fd;
+        color: #0052a3;
+      }
+    }
   }
 }
 
@@ -57,6 +83,19 @@
 
     .app-title {
       font-size: 1.25rem;
+    }
+
+    .nav-content {
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      width: 100%;
+
+      a {
+        flex: 1;
+        text-align: center;
+      }
     }
   }
 

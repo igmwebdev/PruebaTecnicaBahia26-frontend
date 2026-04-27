@@ -1,9 +1,12 @@
 <div class="order-list-container">
   <div class="header">
     <h1>Gestión de Pedidos</h1>
-    <button class="btn btn-primary" (click)="executeBatch()" [disabled]="isLoading">
-      {{ isLoading ? 'Procesando...' : 'Ejecutar Batch' }}
-    </button>
+    <div class="header-actions">
+      <a class="btn btn-secondary" routerLink="/pedidos/nuevo">Nuevo pedido</a>
+      <button class="btn btn-primary" (click)="executeBatch()" [disabled]="isLoading">
+        {{ isLoading ? 'Procesando...' : 'Ejecutar Batch' }}
+      </button>
+    </div>
   </div>
 
   <div *ngIf="successMessage" class="alert alert-success">

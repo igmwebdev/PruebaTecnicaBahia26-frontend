@@ -1,6 +1,9 @@
 <div class="order-form-container">
   <div class="form-card">
-    <h2>Crear Nuevo Pedido</h2>
+    <div class="form-header">
+      <h2>Crear Nuevo Pedido</h2>
+      <a routerLink="/pedidos">Ver listado</a>
+    </div>
 
     <div *ngIf="successMessage" class="alert alert-success">
       <span>{{ successMessage }}</span>

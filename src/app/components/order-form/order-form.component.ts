@@ -1,19 +1,18 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { OrderService } from '../../services/order.service';
 import { CreateOrderRequest } from '../../models/order.model';
 
 @Component({
   selector: 'app-order-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './order-form.component.html',
   styleUrls: ['./order-form.component.scss']
 })
 export class OrderFormComponent {
-  @Output() orderCreated = new EventEmitter<void>();
-
   orderForm: FormGroup;
   isLoading = false;
   error: string | null = null;
@@ -46,7 +45,6 @@ export class OrderFormComponent {
         this.successMessage = `Pedido creado exitosamente (ID: ${order.id})`;
         this.orderForm.reset({ quantity: 1 });
         this.isLoading = false;
-        this.orderCreated.emit();
         setTimeout(() => {
           this.successMessage = null;
         }, 4000);
