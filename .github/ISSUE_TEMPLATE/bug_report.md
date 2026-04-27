@@ -27,7 +27,7 @@ Si es aplicable, añade una captura de pantalla del error.
 ## Información del Ambiente
 
 - SO: [e.g. Windows 11, macOS 13]
-- Node.js: [e.g. 18.16.0]
+- Node.js: [e.g. 20.19.0]
 - npm: [e.g. 9.6.7]
 - Navegador: [e.g. Chrome 112]
 

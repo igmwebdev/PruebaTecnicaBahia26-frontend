@@ -16,7 +16,7 @@ Frontend Angular 20 para gestionar pedidos consumiendo una API REST.
 
 ## Requisitos Previos
 
-- Node.js 20+
+- Node.js 20.19+
 - npm o yarn
 - Angular CLI 20
 

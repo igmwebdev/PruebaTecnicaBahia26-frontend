@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/igmwebdev/PruebaTecnicaBahia26-frontend.git"
   },
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",

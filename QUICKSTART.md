@@ -2,7 +2,7 @@
 
 ## Requisitos
 
-- Node.js 20+
+- Node.js 20.19+
 - npm o yarn
 
 ## Instalación y Ejecución
