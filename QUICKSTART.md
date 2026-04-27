@@ -37,7 +37,6 @@ La aplicación se abrirá automáticamente en `http://localhost:4200`
 ```bash
 npm start        # Inicia el servidor de desarrollo
 npm run build    # Build para producción
-npm test         # Ejecuta los tests
 ```
 
 ## Configuración de la API

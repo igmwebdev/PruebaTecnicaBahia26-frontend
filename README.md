@@ -158,12 +158,6 @@ Para realizar cambios en los componentes o servicios:
 2. Los cambios se reflejarán automáticamente en el navegador (con `npm start`)
 3. Para ver errores de compilación, revisar la consola del navegador y la terminal
 
-## Tests
-
-```bash
-npm test
-```
-
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir los cambios propuestos.
